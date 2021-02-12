@@ -68,3 +68,22 @@ plt.show()
 ```py
 age_buckets = tf.feature_column.bucketized_column(age, boundaries=[20,30,40,50,60,80])
 ```
+- Create a list of the columns that will feature. we will use this later.
+```py
+feat_cols = [num_preg, Gluc_conc, bld_press, tricep, insulin, bmi, pedigree, age_buckets]
+```
+- Drop the Class from the x_data as that is the actual risk of diabetes
+- Create a train/test split of the data
+- Create the input function you will train
+```py
+x_data = diabetes.drop('Class', axis=1)
+labels = diabetes['Class']
+X_train, X_test, y_train, y_test = train_test_split(x_data, labels, test_size=0.35, random_state=101)
+
+input_func = tf.compat.v1.estimator.inputs.pandas_input_fn(x=X_train, y=y_train, batch_size=10, num_epochs=1000, shuffle=True)
+```
+- Finally we can train the model. We have chosen to go over the function 500 times.
+```py
+model = tf.estimator.LinearClassifier(feature_columns=feat_cols, n_classes=2)
+model.train(input_fn=input_func, steps=500)
+```
