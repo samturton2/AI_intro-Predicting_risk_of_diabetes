@@ -21,4 +21,7 @@ AI is a branch of computer science dedicated to creating intelligent machines th
 -	Google Home
 
 ## Predicting risk of diabetes
+The code used to create the model, and predict other patients risk is in the main.py file.
+
+
 
