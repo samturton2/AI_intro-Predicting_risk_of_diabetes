@@ -87,3 +87,16 @@ input_func = tf.compat.v1.estimator.inputs.pandas_input_fn(x=X_train, y=y_train,
 model = tf.estimator.LinearClassifier(feature_columns=feat_cols, n_classes=2)
 model.train(input_fn=input_func, steps=500)
 ```
+- Now can use model to predict chance of diabetes for 10 of the patients
+```py
+pred_input_func = tf.compat.v1.estimator.inputs.pandas_input_fn( x=X_test, batch_size=10, num_epochs=1, shuffle=False)
+predictions = model.predict(pred_input_func)
+list(predictions)
+```
+- Compare the 10 peoples predicted results with their actual results so we can see the accuracy of the model.
+```py
+eval_input_func = tf.compat.v1.estimator.inputs.pandas_input_fn(x=X_test, y=y_test, batch_size=10, num_epochs=1, shuffle=False)
+results = model.evaluate(eval_input_func)
+print(results)
+```
+- It should show a list like this,
