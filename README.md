@@ -63,7 +63,7 @@ diabetes['Age'].hist(bins=20)
 plt.show()
 ```
 - Which should show this graph
-![](img/figure_1.png)
+![](img/Figure_1.png)
 - So we can put age into buckets so its easier to work with
 ```py
 age_buckets = tf.feature_column.bucketized_column(age, boundaries=[20,30,40,50,60,80])
