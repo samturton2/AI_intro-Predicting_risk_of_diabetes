@@ -15,6 +15,7 @@ AI is a branch of computer science dedicated to creating intelligent machines th
 -	Self Awareness – Superintelligent, sentient and concious
 
 ### Achieving AI
+![](img/machinelearning.png)
 -	Machine Learning
 -	Deep Learning
 	-	Input layer, hidden layer, Output layer
