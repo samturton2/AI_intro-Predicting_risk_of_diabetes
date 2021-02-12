@@ -1,4 +1,7 @@
 # Simplilearn – Intro To AI
+![](img/Simplilearn_AI.png)
+
+[Video Link](https://www.youtube.com/watch?v=FWOZmmIUqHg)
 
 ### What is it?
 AI is a branch of computer science dedicated to creating intelligent machines that work and react like humans.
