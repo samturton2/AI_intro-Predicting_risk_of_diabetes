@@ -57,3 +57,14 @@ bmi = tf.feature_column.numeric_column('BMI')
 pedigree = tf.feature_column.numeric_column('Pedigree')
 age = tf.feature_column.numeric_column('Age')
 ```
+- We can plot a histogram of the ages of the participents in the data to see the distribution
+```py
+diabetes['Age'].hist(bins=20)
+plt.show()
+```
+- Which should show this graph
+![](img/figure_1.png)
+- So we can put age into buckets so its easier to work with
+```py
+age_buckets = tf.feature_column.bucketized_column(age, boundaries=[20,30,40,50,60,80])
+```
