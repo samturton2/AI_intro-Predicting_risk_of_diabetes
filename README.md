@@ -99,4 +99,8 @@ eval_input_func = tf.compat.v1.estimator.inputs.pandas_input_fn(x=X_test, y=y_te
 results = model.evaluate(eval_input_func)
 print(results)
 ```
-- It should show a list like this,
+- It should show a list like this
+```bash
+{'accuracy': 0.732342, 'accuracy_baseline': 0.65799254, 'auc': 0.77189267, 'auc_precision_recall': 0.61932063, 'average_loss': 0.54399353, 'label/mean': 0.34200743, 'loss': 0.5440154, 'precision': 0.6219512, 'prediction/mean': 0.37419087, 'recall': 0.5543478, 'global_step': 500}
+```
+- Showing the accuracy to be approximately **0.7**
